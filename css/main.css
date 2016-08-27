@@ -23,6 +23,7 @@ body {
 #projects {
     margin: 20px;
     display: block;
+    overflow: hidden;
 }
 
 h3 {
