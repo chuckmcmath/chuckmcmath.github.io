@@ -1,5 +1,50 @@
 <!DOCTYPE html>
 <head>
+    <title>100% Chuck</title>
+    <meta charset="utf-8" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
 </head>
 <body>
+
+<div id="info">
+<h2>Chuck McMath</h2>
+<p>Various and sundry projects.
+</div>
+
+<div id="projects"></div>
+
+<script id="project-item-template" type="text/x-handlebars-template">
+    <div>
+        {{#each this}}
+        <a href='{{page-url}}' target='_blank'>
+          <div id="project-{{name}}" class="poster">
+          <h3>{{name}}</h3>
+          <div class="project-description">{{description}}</div>
+          <div class="project-pic-frame"><img  class="project-pic" src="img/{{image-url}}"></img></div>
+          </div>
+        </a>
+        {{/each}}
+    </div>
+</script>
+
+<script>
+    $(document).ready(function() {
+        d3.json('data/projects.json', function(err, data) {
+            if (err) {
+                alert("Could not load projects... whaa?");
+            } else {
+                var template = Handlebars.compile($("#project-item-template").html());
+                $("#projects").html(template(data));
+            }
+        });
+    });
+</script>
 </body>
