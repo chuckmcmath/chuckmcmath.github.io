@@ -8,6 +8,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.3.2/hint.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
@@ -18,8 +20,11 @@
         <a href="mailto:chuck.mcmath@gmail.com" target="_blank"><i class='fa fa-envelope-square fa-2x contact'></i> </a>
         <a href="http://www.linkedin.com/in/charles-mcmath-369b796a" target="_blank"><i class='fa fa-linkedin-square fa-2x contact linkedin-blue' onclick='doLinkedin'></i></a>
     </div>
+    <div id="subtext" class="serif">
+        <p>JavaScript, D3.js, Java, C++, front-end and full-stack development.
+    </div>
     <div id="description" class="serif">
-        Various and sundry code samples - some related to projects I've worked on and some just created for the heck of it. Click on a project to launch a demo page which will allow you to play around with it.
+        <p>Various and sundry code samples - some related to projects I've worked on and some just created for the heck of it. Click on a project to launch a demo page which will allow you to play around with it.
     </div>
 </div>
 
@@ -30,6 +35,11 @@
         <a href='{{page-url}}' target='_blank'>
         <div id="project-{{name}}" class="poster">
             <div id="title-{{name}}" class="poster-title">{{name}}</div>
+            <div id="features-{{name}}" class="poster-features">
+                {{#each this.features}}
+                {{iconForFeature this}}
+                {{/each}}
+            </div>
             <div class="project-description serif">{{description}}</div>
             <div class="project-pic-frame"><img  class="project-pic" src="img/{{image-url}}"></img></div>
         </div>
@@ -38,6 +48,21 @@
 </script>
 
 <script>
+    var feature = [];
+    feature.javascript = {
+        "icon": "file-code-o", "descr" : "Code written in JavaScript"};
+    feature.d3 = {
+        "icon": "area-chart", "descr" : "Uses the D3.js visualization library"};
+    feature.frontend = {
+        "icon": "desktop", "descr" : "Front-end development"};
+    feature.fullstack = {
+        "icon": "server", "descr" : "Full-stack development"};
+
+    Handlebars.registerHelper("iconForFeature", function(name) {
+      return new Handlebars.SafeString("<span class='hint--top' aria-label='"+ feature[name].descr +
+                        "'><i class='fa fa-" + feature[name].icon + "'></i></span>");
+    });
+
     $(document).ready(function() {
         d3.json('data/projects.json', function(err, data) {
             if (err) {

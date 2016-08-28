@@ -2,9 +2,14 @@
 
 [
     {
-      "name"       : "D3 Multi-select Treemap",
-      "description": "This is a D3 treemap display that allows selection of multiple leaf nodes. This visualization was used with a shallow but wide hierarchy where the users were familiar with the first child layer, but needed relatively easy access to the leaf nodes for selection.",
-      "image-url"  : "uc.jpg",
+      "name"       : "Multi-select Treemap",
+      "description": "This is a D3 treemap display that enables selection of multiple leaf nodes. This visualization was used with a shallow but wide hierarchy where the users were familiar with the first child layer and needed quick access to the leaf nodes for selection. The large number of leaf nodes made display of all the leaf nodes at once problematic.",
+      "features"   : [
+                        "javascript",
+                        "frontend",
+                        "d3"
+                    ],
+      "image-url"  : "dstreemap-small.jpg",
       "page-url"   : "dstreemap.html"
   }
 ]

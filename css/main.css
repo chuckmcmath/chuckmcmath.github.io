@@ -39,6 +39,12 @@ body {
     color: inherit;
 }
 
+#subtext {
+    clear: both;
+    font-size: 10px;
+    font-style: italic;
+}
+
 #description {
     clear: both;
     font-size: 20px;
@@ -46,7 +52,7 @@ body {
 
 #projects {
     margin: 20px;
-    padding-top: 5px;
+    padding-top: 15px;
     overflow: hidden;
     min-width: 290px;
 }
@@ -57,8 +63,10 @@ body {
 }
 
 .project-description {
-  margin: 20px;
-  font-size: 16px;
+    clear: both;
+    margin: 20px;
+    padding-top: 20px;
+    font-size: 16px;
 }
 
 img {
@@ -69,18 +77,23 @@ img {
 }
 
 .poster-title {
-    margin: 20px;
+    float: left;
     font-size: 20px;
     font-weight: 700;
 }
 
+.poster-features {
+    float: left;
+    margin: 4px 0 0 20px;
+}
+
 .poster {
-    transition: top ease 0.1s, left ease 0.1s;
+    width: 75%;
     background-color: white;
     border: 1px solid black;
     border-radius: 10px;
-    margin: 0 0 15px 15px;
-    padding: 5px;
+    margin: 0 0 15px 20px;
+    padding: 20px 0 0 20px;
 }
 
 .poster:hover {
