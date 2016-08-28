@@ -13,24 +13,28 @@
 <body>
 
 <div id="info">
-<h2>Chuck McMath</h2>
-<p>Various and sundry projects. Click on a project to launch a demo page which will allow you to play around with it.
+    <div id="name-panel">Chuck McMath</div>
+    <div id="contact-panel">
+        <a href="mailto:chuck.mcmath@gmail.com" target="_blank"><i class='fa fa-envelope-square fa-2x contact'></i> </a>
+        <a href="http://www.linkedin.com/in/charles-mcmath-369b796a" target="_blank"><i class='fa fa-linkedin-square fa-2x contact linkedin-blue' onclick='doLinkedin'></i></a>
+    </div>
+    <div id="description" class="serif">
+        Various and sundry code samples - some related to projects I've worked on and some just created for the heck of it. Click on a project to launch a demo page which will allow you to play around with it.
+    </div>
 </div>
 
 <div id="projects"></div>
 
 <script id="project-item-template" type="text/x-handlebars-template">
-    <div>
-        {{#each this}}
+    {{#each this}}
         <a href='{{page-url}}' target='_blank'>
-          <div id="project-{{name}}" class="poster">
-          <h3>{{name}}</h3>
-          <div class="project-description">{{description}}</div>
-          <div class="project-pic-frame"><img  class="project-pic" src="img/{{image-url}}"></img></div>
-          </div>
+        <div id="project-{{name}}" class="poster">
+            <div id="title-{{name}}" class="poster-title">{{name}}</div>
+            <div class="project-description serif">{{description}}</div>
+            <div class="project-pic-frame"><img  class="project-pic" src="img/{{image-url}}"></img></div>
+        </div>
         </a>
-        {{/each}}
-    </div>
+    {{/each}}
 </script>
 
 <script>
