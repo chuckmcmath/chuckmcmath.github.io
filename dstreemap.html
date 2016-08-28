@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>Multi-select Treemap</title>
+    <meta charset="utf-8" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="js/dstreemap.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/dstreemap.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div id="prj-top-header">
+      <h2>Multi-select Treemap</h2>
+    </div>
+
+    <div id="buttonPanel">
+        Select top-level child to display:<br />
+      <form>
+        <label><input type="radio" name="dataset" value="0"> Analytics</label>
+        <label><input type="radio" name="dataset" value="1" checked> Animate</label>
+        <label><input type="radio" name="dataset" value="2"> Data</label>
+        <label><input type="radio" name="dataset" value="3"> Display</label>
+        <label><input type="radio" name="dataset" value="4"> Flex</label>
+        <label><input type="radio" name="dataset" value="5"> Physics</label>
+        <label><input type="radio" name="dataset" value="6"> Query</label>
+        <label><input type="radio" name="dataset" value="7"> Scale</label>
+        <label><input type="radio" name="dataset" value="8"> Util</label>
+        <label><input type="radio" name="dataset" value="9"> Viz</label>
+      </form>
+    </div>
+
+    <div id="main"></div>
+    <div id="selection"></div>
+
+<script>
+    $(document).ready(function() {
+        DSTreemap.createTreemap('main', 'data/flare.json');
+    });
+</script>
+</body>

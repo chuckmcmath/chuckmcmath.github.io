@@ -5,6 +5,6 @@
     "name"       : "D3 Multi-select Treemap",
     "description": "This is a D3 treemap display that allows selection of multiple leaf nodes. This can be used to choose multiple items from a shallow but wide hierarchy.",
     "image-url"  : "uc.jpg",
-    "page-url"   : "index.html"
+    "page-url"   : "dstreemap.html"
   }
 ]
