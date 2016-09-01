@@ -2,7 +2,7 @@
 
 This repo is an assemblage (yeah, that's a [word](http://www.dictionary.com/browse/assemblage)) and presentation of various coding projects.
 
-There's not much more to say than that.
+There's not much more to say than that. The activity here is inversely related to how busy I am during my '9 to 5' programming time. So if not a lot has happened recently, it's only because I'm super busy at work!
 
 My interests are in web-development, mostly front-end, though I'm also experienced in full-stack and server-side development. Lately all I seem to be doing is JavaScript though. Oh yeah, lately I've been workingg quite a bit with [D3](http://d3js.org), which is an awesome data visualization package.
 
